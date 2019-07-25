@@ -50,8 +50,7 @@ for line in open("inac276_genom_repa.fasta"):
   if ('plasmid' in fEle):
     index = fEle.index('plasmid') + 1
     lastField = fEle[index].replace(',', '').replace('\n', '')
-  
-  if ('plasmid:' in fEle):
+  elif ('plasmid:' in fEle):
     index = fEle.index('plasmid:') + 1
     lastField = fEle[index].replace(',', '').replace('\n', '')
 
@@ -60,5 +59,5 @@ for line in open("inac276_genom_repa.fasta"):
   print >> newFile, newLine
   print >> newFile, dict2[key]
 
-print '转换完毕'
+print ('转换完毕...')
 newFile.close()
